@@ -1,0 +1,19 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int main()
+{
+    int t; //test cases;
+    int n;
+    int ans;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        ans=int(sqrt(n));
+        cout<<ans<<endl;
+
+    }//while
+    return 0;
+}
