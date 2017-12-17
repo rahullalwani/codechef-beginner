@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t; //test cases;
+    int a[3];
+    int sze;
+    cin>>t;
+    while(t--)
+    {
+        cin>>a[0]>>a[1]>>a[2];
+        sze=sizeof(a)/sizeof(a[0]);
+        sort(a,a+sze);
+        cout<<a[1]<<endl;
+
+    }//while
+    return 0;
+}
