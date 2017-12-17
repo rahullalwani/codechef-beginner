@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int t; //test cases;
+    int n;
+    int k;
+    int cntr;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        cntr=0;
+        while(n!=0)
+        {
+          k=n%10;
+          if(k==4)
+            cntr=cntr+1;
+            n=n/10;
+        }//while
+        cout<<cntr<<endl;
+
+    }//while
+    return 0;
+}
