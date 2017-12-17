@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+
+int main()
+{
+    int t; //test cases;
+    int num;
+    cin>>t;
+    while(t--)
+    {
+        cin>>num;
+        if(num<10)
+            cout<<"What an obedient servant you are!"<<endl;
+        else
+            cout<<"-1"<<endl;
+    
+    }//while
+    return 0;
+}
