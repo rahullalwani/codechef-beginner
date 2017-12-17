@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int t; //test cases;
+    int n;
+    int k;
+    int sum;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        if(n>=10)
+        {
+
+
+        sum=0;
+        k=n%10;
+        sum+=k;
+        while(n!=0)
+        {
+            k=n%10;
+            n=n/10;
+        }
+        sum=sum+k;
+        }//if
+        else
+            sum=n;
+        cout<<sum<<endl;
+
+
+    }//while
+    return 0;
+}
