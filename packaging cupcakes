@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int t; //number of test cases
+    int n; //number of cup cakes
+    int l,k;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        if(n%2==0)
+        {
+            k=n+2;
+            l=k/2;
+            cout<<l<<endl;
+
+        }
+        else
+        {
+            k=n+1;
+            l=k/2;
+            cout<<l<<endl;
+        }
+
+    }//while
+
+    return 0;
+}//main
