@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int ft(int n)
+{
+    if(n==1 || n==0)
+        return 1;
+    else
+      return n*ft(n-1);
+}
+
+
+int main()
+{
+    int t; //test cases;
+    int num;
+    int fact;
+
+    cin>>t;
+    while(t--)
+    {
+        cin>>num;
+        fact=1;
+        fact=ft(num);
+        cout<<fact<<endl;
+
+    }//while
+    return 0;
+}
