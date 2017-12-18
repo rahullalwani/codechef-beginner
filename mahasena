@@ -1,0 +1,36 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+   // cin>>t;
+    int a[105];
+    int n;
+    int ec,oc;
+    //while(t--)
+    //{
+        cin>>n;
+        ec=0;
+        oc=0;
+        for(int i=0;i<n;i++)
+        {
+            cin>>a[i];
+        }
+        for(int i=0;i<n;i++)
+        {
+            if(a[i]%2==0)
+                ec=ec+1;
+            else
+                oc=oc+1;
+        }
+        if(ec>oc)
+            cout<<"READY FOR BATTLE"<<endl;
+        else if(ec<=oc)
+            cout<<"NOT READY"<<endl;
+
+    //}//while
+
+    return 0;
+}
