@@ -1,0 +1,27 @@
+ GOOD LEARNING EXAMPLE
+ 
+ #include<iostream>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    int a[20];
+    int n;
+    while(t--)
+    {
+        cin>>n;
+        for(int i=0;i<n;i++)
+            cin>>a[i];
+        for(int i=0;i<n;i++)
+            cout<<a[i];
+
+        cout<<endl;
+
+
+    }//while
+
+
+    return 0;
+}
