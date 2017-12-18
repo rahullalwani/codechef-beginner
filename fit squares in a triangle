@@ -1,0 +1,26 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    int b,s;
+
+    while(t--)
+    {
+        cin>>b;
+        s=0;
+        while(b-2>0)
+        {
+
+            s=s+(b-2)/2;
+            b=b-2;
+        }
+        cout<<s<<endl;
+
+    }//while
+
+    return 0;
+}
