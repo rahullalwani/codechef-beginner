@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    string a,b;
+    int mindiff,maxdiff;
+    while(t--)
+    {
+        cin>>a>>b;
+        mindiff=0;
+        maxdiff=0;
+        for(int i=0;i<a.length();i++)
+        {
+            if(a[i]!=b[i] && a[i]!='?' && b[i]!='?')
+                mindiff=mindiff+1;
+
+        }
+        for(int i=0;i<a.length();i++)
+        {
+            if(a[i]!=b[i] || a[i]=='?' || b[i]=='?')
+                maxdiff=maxdiff+1;
+        }
+        cout<<mindiff<<" "<<maxdiff<<endl;
+
+    }//while
+
+    return 0;
+}
