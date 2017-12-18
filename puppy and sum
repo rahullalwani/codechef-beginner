@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int sum(int n)
+{
+    return (n*n+n)/2;
+
+}
+
+
+int main()
+{
+    int t;
+    cin>>t;
+    int d,n;
+    int totalsum;
+    while(t--)
+    {
+        cin>>d>>n;
+        totalsum=n;
+        while(d--)
+        {
+            totalsum=sum(totalsum);
+
+        }//while
+        cout<<totalsum<<endl;
+
+    }//while
+
+    return 0;
+}
