@@ -1,0 +1,100 @@
+#include<iostream>
+using namespace std;
+
+
+void intersect(int a[],int m,int b[],int t,int n)
+{
+    int counter=0,ct=0;
+    int c[100];
+    int k=0;
+    int flag=0;
+    for(int i=0;i<m;i++)
+    {
+        for(int j=0;j<t;j++)
+        {
+            if(a[i]==b[j])
+            {
+                counter=counter+1;
+                c[k]=a[i];
+                k=k+1;
+            }
+        }
+    }//for
+
+    for(int i=0;i<m;i++)
+    {
+        flag=0;
+        for(int j=0;j<k;j++)
+        {
+            if(a[i]==c[j])
+                flag=1;
+        }
+        if(flag==0)
+        {
+            c[k]=a[i];
+            k=k+1;
+        }
+    }
+
+    for(int i=0;i<t;i++)
+    {
+        flag=0;
+        for(int j=0;j<k;j++)
+        {
+            if(b[i]==c[j])
+                flag=1;
+        }
+        if(flag==0)
+        {
+            c[k]=b[i];
+            k=k+1;
+        }
+    }
+    for(int i=1;i<=n;i++)
+    {
+        flag=0;
+        for(int j=0;j<k;j++)
+        {
+            if(i==c[j])
+                flag=1;
+        }
+        if(flag==0)
+            ct=ct+1;
+    }
+
+
+    cout<<counter<<" "<<ct<<endl;
+
+}//intersect
+
+
+
+int main()
+{
+    int t;//number of test cases;
+    cin>>t;
+    int n; // total number of elements
+    int m; //number of elements in a sequence a
+    int k;//number of elements in a sequence b
+    int *a,*b;
+    while(t--)
+    {
+        cin>>n>>m>>k;
+        a=new int[m];     //array to store the first sequence
+        b=new int[k];       //array to store the 2 nd seq
+        for(int i=0;i<m;i++)
+        {
+            cin>>a[i];
+        }//for
+        for(int i=0;i<k;i++)
+        {
+            cin>>b[i];
+        }
+
+        intersect(a,m,b,k,n);
+
+
+    }//while
+
+    return 0;
+}
