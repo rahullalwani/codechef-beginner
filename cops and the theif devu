@@ -1,0 +1,63 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t; //number of test cases;
+    int m; //initial house numbers where cops are residing
+    int x; //cops can search x houses per minute
+    int y; //maximum search time for the cops
+    int h[105];
+    int a[105];   //array to store the initial house numbers
+    int ct;
+    int ic;
+    cin>>t;
+    while(t--)
+    {
+        cin>>m>>x>>y;
+        ic=x*y;
+        ct=0;
+        for(int i=1;i<=100;i++)
+        {
+            h[i]=0;
+        }
+        for(int i=1;i<=m;i++)
+        {
+            cin>>a[i];
+
+        }
+        for(int i=1;i<=m;i++)
+        {
+            int temp=a[i];
+            h[temp]=1;
+
+            int k=temp+1;
+            int p=1;
+            while(p<=ic && k<=100)
+            {
+                h[k]=1;
+                k=k+1;
+                p=p+1;
+            }
+
+            int j=temp-1;
+            int v=1;
+            while(v<=ic && j>=1)
+            {
+                h[j]=1;
+                j=j-1;
+                v=v+1;
+            }
+
+        }
+
+        for(int i=1;i<=100;i++)
+        {
+           if(h[i]==0)
+            ct=ct+1;
+        }
+        cout<<ct<<endl;
+
+
+    }//while
+    return 0;
+}
