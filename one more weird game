@@ -1,0 +1,20 @@
+//do not make things complicated
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int t;
+    int n,m;
+    cin>>t;
+    int x;
+    while(t--)
+    {
+        cin>>n>>m;
+        x=n*(m-1)+m*(n-1);
+        cout<<x<<endl;
+    }
+    
+    return 0;
+}
