@@ -1,0 +1,72 @@
+#include<iostream>
+#include<bits/stdc++.h>
+#include<stack>
+#include<string>
+using namespace std;
+
+int main()
+{
+    int t; //number of test cases
+    cin>>t;
+    char a[500];   //array to store the final expression
+    string in; //string to store the initial expression
+    stack <char> st;
+    int len;
+    char ch;
+    while(t--)
+    {
+        len=0;
+        cin>>in;
+        for(int i=0;i<in.length();i++)
+        {
+            if(in[i]!='+' && in[i]!='-' && in[i]!='*' && in[i]!='/' && in[i]!='^' && in[i]!='('&&in[i]!=')')
+            {
+                a[len]=in[i];
+                len=len+1;
+            }//if
+            else if(in[i]!=')')
+            {
+                st.push(in[i]);
+
+            }//if
+            else
+            {
+                if(in[i]==')')
+                {
+                    while(st.top()!='(' && !st.empty())
+                    {
+                        ch=st.top();
+                        a[len]=ch;
+                        len=len+1;
+                        st.pop();
+                    }//while
+
+                    if(st.top()=='(')
+                        st.pop();
+
+
+                }//if
+
+            }//else
+        }//for
+
+        while(!st.empty())
+        {
+            ch=st.top();
+            a[len]=ch;
+            len=len+1;
+            st.pop();
+        }//while
+
+        for(int i=0;i<len;i++)
+        {
+            cout<<a[i];
+        }//for
+
+        cout<<endl;
+
+
+    }//while
+
+    return 0;
+}
