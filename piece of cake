@@ -1,0 +1,45 @@
+#include<iostream>
+#include<string>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t;
+    cin>>t;
+    string str;
+    int cnt[26],ct[26];
+    while(t--)
+    {
+        cin>>str;
+        for(int i=0;i<26;i++)
+        {
+            cnt[i]=0;
+            ct[i]=0;
+        }//for
+        for(char ch='a';ch<='z';ch++)
+        {
+            for(int i=0;i<str.length();i++)
+            {
+                if(ch==str[i])
+                {
+                    int temp=ch-97;
+                    cnt[temp]=cnt[temp]+1;
+                }
+            }
+        }//for
+        int maxi=cnt[0];
+        for(int i=0;i<26;i++)
+        {
+            if(cnt[i]>maxi)
+                maxi=cnt[i];
+        }//for
+
+        if(2*maxi==str.length())
+            cout<<"YES"<<endl;
+        else
+            cout<<"NO"<<endl;
+    }
+
+    return 0;
+}
